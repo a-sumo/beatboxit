@@ -17,8 +17,6 @@ RUN set -ex; \
   apt-get -y update; \
   apt-get --yes install libsndfile1; \
   rm -rf /var/lib/apt/lists/*
-# [END run_imageproc_dockerfile_imagemagick]
-# [END cloudrun_imageproc_dockerfile_imagemagick]
 
 # Copy local code to the container image.
 ENV APP_HOME /app
