@@ -9,13 +9,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize AWS S3 and Pinecone
-s3_client = boto3.client('s3')
+s3_client = boto3.client('s3',
+                         aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+                         aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"))
 BUCKET_NAME = 'hyperreal-audio-sample-data-1'
-pinecone.init(api_key=os.environ.get("PINECONE_API_KEY"), environment="gcp-starter")
+pinecone.init(api_key=os.environ.get(
+    "PINECONE_API_KEY"), environment="gcp-starter")
 index = pinecone.Index('audio-samples')
 
 
-def upload_file_to_s3(file_path, is_init = False):
+def upload_file_to_s3(file_path, is_init=False):
     file_name = os.path.basename(file_path)
     if is_init == True:
         s3_client.upload_file(file_path, BUCKET_NAME, file_name)
@@ -39,16 +42,15 @@ def process_and_store_files(directory):
         # Upload to S3
         s3_url = upload_file_to_s3(file_path)
 
-
         # Upload vector and metadata to Pinecone
         vector_id = os.path.basename(file_path).split('.')[0]
         upsert_response = index.upsert(vectors=[
             {"id": vector_id,
-            "values": vector, 
-            "metadata": 
-            {"filename": os.path.basename(file_path),
-            "s3_url": s3_url}
-        }])
+             "values": vector,
+             "metadata":
+             {"filename": os.path.basename(file_path),
+              "s3_url": s3_url}
+             }])
         print(upsert_response)
 
 
