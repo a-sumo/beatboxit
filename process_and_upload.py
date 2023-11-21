@@ -4,6 +4,9 @@ import librosa
 import os
 import glob
 import numpy as np
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize AWS S3 and Pinecone
 s3_client = boto3.client('s3')

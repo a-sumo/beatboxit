@@ -7,7 +7,9 @@ from botocore.exceptions import NoCredentialsError, ClientError
 import urllib.parse
 import librosa
 import pinecone
+from dotenv import load_dotenv
 
+load_dotenv()
 # get variable
 # Initialize AWS S3 and Pinecone
 s3_client = boto3.client('s3')
