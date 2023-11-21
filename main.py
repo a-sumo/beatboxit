@@ -12,7 +12,11 @@ from dotenv import load_dotenv
 load_dotenv()
 # get variable
 # Initialize AWS S3 and Pinecone
-s3_client = boto3.client('s3')
+client = boto3.client(
+    's3',
+    aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY")
+)
 BUCKET_NAME = 'hyperreal-audio-sample-data-1'
 pinecone.init(api_key=os.environ.get(
     "PINECONE_API_KEY"), environment="gcp-starter")
