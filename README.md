@@ -1,4 +1,4 @@
-# Beatboxit - Search sounds by beatboxing.
+# Beatboxit - Search instrumental audio samples by beatboxing.
 ![image](https://github.com/user-attachments/assets/19289741-0adb-4a95-a905-a3a1f2b362dd)
 
 ## Python backend
