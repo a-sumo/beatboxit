@@ -1,0 +1,179 @@
+.app-container {
+    font-family: "Encode Sans Expanded";
+    text-align: center;
+    color: #000000;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+}
+.app-description {
+    font-family: "Encode Sans Expanded", sans-serif;
+    text-align: center;
+    margin: 20px 0;
+    color: #4A4A4A; 
+    font-size: 1.1em; 
+}
+
+.audio-uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: #878787;
+    margin-top: 20px;
+}
+
+/* Input, audio, and button styles */
+.audio-uploader input[type="file"],
+.uploaded-file audio,
+button {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Button styles */
+button {
+    font-family: "Encode Sans Expanded";
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #ffffff; 
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-color: #878787;
+}
+.search-button {
+    border-radius: 8px;
+    background: #000000; 
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color:#f8f8f8;
+}
+
+.search-button:hover {
+    background-color:#444;
+}
+.search-button:active {
+    background-color: #333; 
+}
+
+button:hover {
+    background-color: #9590fb;
+    color: #fff; 
+}
+
+/* Custom file input styles */
+.custom-file-input {
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    font-family: "Encode Sans Expanded";
+}
+
+.custom-file-input::file-selector-button {
+    font-family: "Encode Sans Expanded";
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #ffffff; 
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #878787;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-file-input::file-selector-button:hover {
+    background-color: #9590fb;
+    color: #fff; 
+}
+
+/* Match grid and container styles */
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.match-container {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    border-color: #878787;
+}
+.match-container:hover {
+    border-color: #9590fb; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); 
+}
+.match-container audio {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.uploaded-file audio {
+    width: 100%;
+}
+
+.recording-countdown,
+.recording-progress {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Encode Sans Expanded", sans-serif;
+    border-radius: 4px; /* Rounded corners for progress bar */
+}
+/* Recording countdown and progress styles */
+.recording-countdown {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+.recording-progress {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 350px; /* Match the width of the buttons */
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #5cb85c;
+    transition: width 0.1s ease-in-out;
+}
+
+/* Audio player container styles */
+.audio-player-container {
+    height: 50px; /* Adjust this height as needed */
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    visibility: hidden; /* Use visibility instead of display to reserve space */
+}
+
+/* Recording controls styles */
+.recording-controls {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}

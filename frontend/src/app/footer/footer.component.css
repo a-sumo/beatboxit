@@ -1,0 +1,18 @@
+.app-footer {
+    font-family: "Encode Sans Expanded";
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em; 
+}
+
+.app-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+}

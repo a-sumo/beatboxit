@@ -1,0 +1,35 @@
+<div class="app-container">
+    <img src="assets/images/BeatBoxIt@1x.png" alt="logo" width="350px">
+    <div class="app-description">
+        <p>Find your perfect sound! Beatbox, and we'll match it with a selection from our extensive library of royalty-free audio samples.</p>
+    </div>    
+    <div class="audio-uploader">
+        <input type="file" class="custom-file-input" (change)="onFileChange($event)" accept="audio/*">
+        <div class="uploaded-file">
+            <div class="audio-player-container" [class.hidden]="!showAudioPlayer">
+                <ng-container *ngIf="showAudioPlayer">
+                    <app-audio-player [audioUrl]="uploadedFileUrl"></app-audio-player>
+                </ng-container>
+            </div>
+
+            <div class="recording-controls">
+                <div *ngIf="recordingCountdown" class="recording-countdown">Recording in {{ recordingCountdown }}</div>
+                <div *ngIf="isRecording" class="recording-progress">
+                    <div class="progress-bar" [style.width]="recordingProgress + '%'"></div>
+                </div>
+                <button (click)="loadPreUploadedAudio()">LOAD EXAMPLE</button>
+                <button (click)="startRecording()">RECORD</button>
+                <button class="search-button" (click)="performSearch()">SEARCH</button>
+            </div>
+        </div>
+    </div>
+    <div class="matches-grid">
+        <div *ngFor="let match of matches" class="match-container">
+            <p>{{ match.id }}</p>
+            <audio controls>
+                <source [src]="match.file_url" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</div>
