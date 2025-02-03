@@ -7,4 +7,6 @@ The backend is currently down, but the functinalities can be reproduced either w
 
 ## Angular frontend
 Deployed on https://beatboxit.vercel.app/. 
-The user can either upload an audio sample or record a short clip. After uploading the query sound, the user can play and download the top search results.
+The user can either upload an audio sample or record a short clip. 
+The resulting audio file is then matched against a database of copyright free audio samples. 
+The top 5 results are displayed.
